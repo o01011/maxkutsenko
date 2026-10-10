@@ -1,12 +1,11 @@
 {
 	"dependencies": {
-		"gray-matter": "^4.0.3",
+		"@ls-lint/ls-lint": "^2.3.1",
+		"branch-name-lint": "^3.0.1",
+		"knip": "^6.41.0",
+		"lint-staged": "^17.6.0",
 		"react": "^18.3.1",
-		"react-dom": "^18.3.1",
-		"react-markdown": "^10.1.0",
-		"react-router-dom": "^6.28.0",
-		"react-syntax-highlighter": "^16.1.1",
-		"remark-gfm": "^4.0.1"
+		"react-dom": "^18.3.1"
 	},
 	"devDependencies": {
 		"@biomejs/biome": "2.4.6",
@@ -16,29 +15,30 @@
 		"@types/node": "^22.9.0",
 		"@types/react": "^18.3.12",
 		"@types/react-dom": "^18.3.1",
-		"@types/react-syntax-highlighter": "^15.5.13",
 		"@vitejs/plugin-react": "^4.3.3",
-		"autoprefixer": "^10.4.20",
 		"concurrently": "^9.2.1",
 		"gh-pages": "^6.3.0",
-		"postcss": "^8.4.49",
 		"simple-git-hooks": "^2.13.1",
-		"tailwindcss": "^3.4.15",
 		"typescript": "~5.6.2",
 		"vite": "^5.4.10"
 	},
-	"name": "software-development-blog",
+	"name": "maxkutsenko",
 	"private": true,
 	"scripts": {
-		"build": "tsc --noEmit && vite build",
-		"deploy": "gh-pages -d dist",
 		"dev": "vite",
-		"hooks:init": "simple-git-hooks",
-		"hooks:precommit": "concurrently 'npm run lint:types:check' 'npm run lint:all:check'",
-		"lint:all:check": "biome check .",
-		"lint:all:fix": "biome check --write .",
+		"build": "vite build",
+		"preview": "vite preview",
+		"deploy": "gh-pages -d dist",
+		"lint:check": "biome lint",
+		"lint:fix": "biome lint --write",
+		"lint:format:check": "biome format",
+		"lint:format:fix": "biome format --write",
 		"lint:types:check": "tsc --noEmit",
-		"preview": "vite preview"
+		"lint:clean:check": "knip",
+		"lint:fs:check": "ls-lint",
+		"lint:branch:check": "branch-name-lint branch-name-lint.config.json",
+		"git:hook:init": "simple-git-hooks",
+		"git:hook:precommit": "lint-staged"
 	},
 	"type": "module",
 	"version": "0.0.0"
