@@ -1,6 +1,18 @@
 <main class="resume">
 	<header class="intro">
-		<p class="eyebrow">Backend engineer · Lublin, Poland</p>
+		<div class="intro-top">
+			<p class="eyebrow">Backend engineer · Lublin, Poland</p>
+			<button
+				class="theme-toggle"
+				type="button"
+				[attr.aria-pressed]="isDark"
+				[attr.aria-label]="isDark ? 'Switch to light theme' : 'Switch to dark theme'"
+				(click)="toggleTheme()"
+			>
+				<span aria-hidden="true" [textContent]="isDark ? '☀' : '☾'"></span>
+				<span [textContent]="isDark ? 'Light theme' : 'Dark theme'"></span>
+			</button>
+		</div>
 		<h1>Maksym Kutsenko</h1>
 		<p class="intro-copy">I build dependable software, from well-designed APIs to the systems behind them.</p>
 		<nav class="contact-links" aria-label="Contact and social links">
