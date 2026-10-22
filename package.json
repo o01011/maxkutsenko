@@ -1,33 +1,36 @@
 {
 	"dependencies": {
+		"@angular/common": "^20.3.34",
+		"@angular/compiler": "^20.3.34",
+		"@angular/core": "^20.3.34",
+		"@angular/platform-browser": "^20.3.34",
 		"@ls-lint/ls-lint": "^2.3.1",
 		"branch-name-lint": "^3.0.1",
 		"knip": "^6.41.0",
 		"lint-staged": "^17.6.0",
-		"react": "^18.3.1",
-		"react-dom": "^18.3.1"
+		"rxjs": "~7.8.2",
+		"tslib": "^2.8.1",
+		"zone.js": "~0.15.1"
 	},
 	"devDependencies": {
+		"@angular/build": "^20.3.34",
+		"@angular/cli": "^20.3.34",
+		"@angular/compiler-cli": "^20.3.34",
 		"@biomejs/biome": "2.4.6",
 		"@commitlint/cli": "^20.4.4",
 		"@commitlint/config-conventional": "^20.4.4",
 		"@commitlint/types": "^20.4.4",
 		"@types/node": "^22.9.0",
-		"@types/react": "^18.3.12",
-		"@types/react-dom": "^18.3.1",
-		"@vitejs/plugin-react": "^4.3.3",
-		"concurrently": "^9.2.1",
 		"gh-pages": "^6.3.0",
 		"simple-git-hooks": "^2.13.1",
-		"typescript": "~5.6.2",
-		"vite": "^5.4.10"
+		"typescript": "~5.9.3"
 	},
 	"name": "maxkutsenko",
 	"private": true,
 	"scripts": {
-		"dev": "vite",
-		"build": "vite build",
-		"preview": "vite preview",
+		"dev": "ng serve",
+		"build": "ng build",
+		"preview": "ng serve --configuration production",
 		"deploy": "gh-pages -d dist",
 		"lint:check": "biome lint",
 		"lint:fix": "biome lint --write",
