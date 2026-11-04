@@ -17,10 +17,5 @@
 		"target": "ES2022",
 		"useDefineForClassFields": true
 	},
-	"angularCompilerOptions": {
-		"enableI18nLegacyMessageIdFormat": false,
-		"strictInjectionParameters": true,
-		"strictInputAccessModifiers": true,
-		"strictTemplates": true
-	}
+	"include": ["*.ts"]
 }

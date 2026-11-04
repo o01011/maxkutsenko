@@ -1,8 +1,8 @@
 node_modules
-.angular
 .DS_Store
 dist
 dist-ssr
 *.local
 .env
 __unconfig*
+index.pdf
