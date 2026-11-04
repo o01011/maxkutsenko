@@ -1,6 +1,6 @@
 # maxkutsenko
 
-Personal résumé site built with Angular and plain CSS.
+Personal résumé site built with native HTML and CSS.
 
 ## Development
 
